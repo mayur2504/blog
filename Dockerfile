@@ -17,8 +17,6 @@ COPY . .
 RUN python manage.py makemigrations
 RUN python manage.py migrate
 
-#to remove any background process 
-RUN sudo service docker restart 
 # Expose the port that the Django app will run ons
 EXPOSE 8000
 
