@@ -9,12 +9,13 @@ COPY requirements.txt .
 
 # Install the project dependencies
 RUN pip install --no-cache-dir -r requirements.txt
-RUN python manage.py makemigrations
-RUN python manage.py migrate
+
 
 # Copy the project code to the working directory
 COPY . .
 
+RUN python manage.py makemigrations
+RUN python manage.py migrate
 # Expose the port that the Django app will run ons
 EXPOSE 8000
 
